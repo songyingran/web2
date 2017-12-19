@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<style type="text/css">
+		body{padding-left: 35%;}
+		.top1{width: 300px;height: 25px;background-color: #F0FFFF;padding-left: 4px;}
+		.top1 span{font-size: 14px;line-height: 25px;}
+		#top2{width: 300px;height: 30px;}
+		#top2 ul li{list-style: none;float: left;margin-right: 6px;}
+		#bottom1{width: 300px;height: 120px;}
+		#bottom1 textarea{width: 300px;height: 100px;border:solid black 1px;}
+		.bottom2{width: 300px;height: 25px;}
+		.bottom2 select{float: right;padding-right: 4px;}
+	</style>
+</head>
+<body>
+	<div class="top1"><span>宝贝与描述相符（打分匿名）</span></div>
+	<div id="top2">
+		<ul>
+			<li><img src="images/star0.png"></li>
+			<li><img src="images/star0.png"></li>
+			<li><img src="images/star0.png"></li>
+			<li><img src="images/star0.png"></li>
+			<li><img src="images/star0.png"></li>
+		</ul>
+	</div>
+	<div id="bottom1"><textarea rows="5" cols="20" id="text"></textarea></div>
+	<div class="bottom2">
+		<select>
+			<option>公开评论</option>
+			<option>秘密评论</option>
+		</select>
+	</div>
+</body>
+<script type="text/javascript">
+		var top2 = document.getElementById('top2');
+		var li = document.getElementsByTagName('img');
+		var text = document.getElementById('text');
+		var font= ['继续加油','再接再厉','还会更好的','非常不错','接近完美！'];
+		var con = false;
+		var i;
+		function starPic(i){
+			if(i<2){
+				for(var n=0;n<=i;n++)
+					li[n].src="images/star1.png";
+			}
+			else{
+				for(var n=0;n<=i;n++)
+					li[n].src="images/star2.png";
+			}
+		}
+		function outstar(){
+			for(var n=0;n<5;n++)
+					li[n].src="images/star0.png";
+			text.value='';
+		}
+		function ta(e){
+			text.value=font[e];
+		}
+		li[0].onmouseover = function(){
+			starPic(0);
+			ta(0);
+		}
+		li[1].onmouseover = function(){
+			starPic(1);
+			ta(1);
+		}
+		li[2].onmouseover = function(){
+			starPic(2);
+			ta(2);
+		}
+		li[3].onmouseover = function(){
+			starPic(3);
+			ta(3);
+		}
+		li[4].onmouseover = function(){
+			starPic(4);
+			ta(4);
+		}
+		li[0].onmouseout = function(){
+			outstar(0);
+		}
+		li[1].onmouseout = function(){
+			outstar(1);
+		}
+		li[2].onmouseout = function(){
+			outstar(2);
+		}
+		li[3].onmouseout = function(){
+			outstar(3);
+		}
+		li[4].onmouseout = function(){
+			outstar(4);
+		}
+		/*function qd(b){
+			if(b<2){
+				for(var c=0;c<=b;c++)
+					li[c].src="images/star1.png";
+			}
+			else{
+				for(var c=0;c<=b;c++)
+					li[c].src="images/star2.png";
+			}
+		}
+		li[0].onclick = function(){
+			qd(0);
+			ta(0);
+		}
+		li[1].onclick = function(){
+			qd(1);
+			ta(1);
+		}
+		li[2].onclick = function(){
+			qd(2);
+			ta(2);
+		}
+		li[3].onclick = function(){
+			qd(3);
+			ta(3);
+		}
+		li[4].onclick = function(){
+			qd(4);
+			ta(4);
+		}*/
+	</script>
+</html>
